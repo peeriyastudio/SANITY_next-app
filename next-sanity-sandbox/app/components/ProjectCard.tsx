@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useState } from "react";
 import { PortableText } from "@portabletext/react";
 import { Project } from "@/types/Project";
-import type { PortableTextBlock } from "@portabletext/react";
 
 interface ProjectCardProps {
   initialProjects: Project[];
