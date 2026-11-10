@@ -11,7 +11,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ initialProjects }: ProjectCardProps) {
   return (
-    <div id="projects" className="w-full max-w-2xl flex flex-col gap-8">
+    <div id="projects" className="w-full max-w-6xl mx-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 items-start">
       {initialProjects.map((project) => (
         <ProjectItem key={project._id} project={project} />
       ))}
@@ -39,7 +39,7 @@ function ProjectItem({ project }: { project: Project }) {
       )}
 
       <div className="p-6">
-        <h2 className="font-heading text-3xl font-bold tracking-wide text-zinc-900 dark:text-zinc-100 mb-4">
+        <h2 className="font-heading text-[clamp(1.25rem,1.15rem+0.3vw,1.375rem)] font-bold tracking-normal leading-tight text-balance text-zinc-900 dark:text-zinc-100 mb-3 md:mb-4">
           {project.title}
         </h2>
         <p className="font-sans text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed mb-4">
@@ -56,7 +56,7 @@ function ProjectItem({ project }: { project: Project }) {
                 aria-controls={`details-${project._id}`}
                 className={buttonClass}
               >
-                {isOpen ? "Hide details ➖" : "Show details ➕"}
+                {isOpen ? "Details ➖" : "Details ➕"}
               </button>
             )}
             <a
@@ -65,7 +65,7 @@ function ProjectItem({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className={`${buttonClass} group/link inline-flex items-center`}
             >
-              Live Project ↗️
+              Live Demo ↗️
             </a>
           </div>
 
