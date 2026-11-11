@@ -27,13 +27,13 @@ function ProjectItem({ project }: { project: Project }) {
   return (
     <div className="group overflow-hidden rounded-xl border border-gray-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm transition-all duration-300 hover:shadow-md">
       {project.image && (
-        <div className="relative overflow-hidden w-full h-[320px]">
+        <div className="relative aspect-video w-full overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-800">
           <Image
             src={project.image}
             alt={project.title}
             fill
-            sizes="(max-width: 672px) 100vw, 672px"
-            className="object-cover transition-transform duration-500 ease-out group-hover:scale-102"
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover object-top"
           />
         </div>
       )}
@@ -45,7 +45,6 @@ function ProjectItem({ project }: { project: Project }) {
         <p className="font-sans text-zinc-700 dark:text-zinc-300 text-sm leading-relaxed mb-4">
           {project.description}
         </p>
-
         <div className="border-t border-gray-100 dark:border-zinc-800/60 pt-4">
           <div className="flex flex-wrap gap-3">
             {hasContent && (

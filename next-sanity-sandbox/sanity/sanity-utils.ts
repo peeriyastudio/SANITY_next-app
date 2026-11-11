@@ -1,11 +1,15 @@
 import { Project } from "@/types/Project";
+import { Hero } from "@/types/Hero";
 import { createClient, groq } from "next-sanity";
 
+const client = createClient({
+  projectId: "rpmoy997",
+  dataset: "production",
+  apiVersion: "2025-01-01",
+  useCdn: true,
+});
+
 export async function getProjects(): Promise<Project[]> {
-  const client = createClient({
-    projectId: "rpmoy997",
-    dataset: "production",
-  });
   return client.fetch(
     groq`*[_type == "project"]{
       _id,
@@ -14,7 +18,17 @@ export async function getProjects(): Promise<Project[]> {
       description,
       "image": image.asset->url,
       url,
-      content
+      content,
+      tools
+    }`
+  );
+}
+
+export async function getHero(): Promise<Hero | null> {
+  return client.fetch(
+    groq`*[_type == "hero" && _id == "hero"][0]{
+      heading,
+      tagline
     }`
   );
 }

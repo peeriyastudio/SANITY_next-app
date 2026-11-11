@@ -50,7 +50,15 @@ const project = {
       title: "Content",
       type: "array",
       of: [{type: "block"}],
-    }
+    },
+    {
+      name: "tools",
+      title: "Tools",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
+      validation: (Rule: any) => Rule.unique().max(8),
+    },
   ]
 };
 
