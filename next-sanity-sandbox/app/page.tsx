@@ -1,6 +1,7 @@
 import { getProjects, getHero } from "@/sanity/sanity-utils";
 import ProjectCard from "./components/ProjectCard";
 import Hero from "./components/Hero";
+import PageNav from "./components/PageNav";
 export const revalidate = 60;
 
 export default async function Home() {
@@ -11,6 +12,16 @@ export default async function Home() {
         <Hero hero={hero} />
         <ProjectCard initialProjects={projects} />
       </div>
+      <PageNav
+        items={[
+          {
+            href: "https://www.peeriyastudio.com",
+            label: "Back to Peeriya Creative Studio",
+            icon: "/arrow-left.svg",
+            external: true,
+          },
+        ]}
+      />
     </main>
   );
 }
