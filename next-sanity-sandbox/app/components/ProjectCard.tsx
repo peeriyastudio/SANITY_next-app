@@ -11,7 +11,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ initialProjects }: ProjectCardProps) {
   return (
-    <div id="projects" className="w-full max-w-6xl mx-auto grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 items-start">
+    <div id="projects" className="w-full grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 items-start">
       {initialProjects.map((project) => (
         <ProjectItem key={project._id} project={project} />
       ))}
@@ -64,7 +64,7 @@ function ProjectItem({ project }: { project: Project }) {
               rel="noopener noreferrer"
               className={`${buttonClass} group/link inline-flex items-center`}
             >
-              Live Demo ↗️
+              Link ↗️
             </a>
           </div>
 

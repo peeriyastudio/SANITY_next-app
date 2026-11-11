@@ -26,7 +26,7 @@ export async function getProjects(): Promise<Project[]> {
 
 export async function getHero(): Promise<Hero | null> {
   return client.fetch(
-    groq`*[_type == "hero" && _id == "hero"][0]{
+    groq`*[_type == "hero"] | order(_updatedAt desc)[0]{
       heading,
       tagline
     }`
