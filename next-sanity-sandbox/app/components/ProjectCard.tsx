@@ -96,7 +96,7 @@ function ProjectLink({ href, className }: { href: string; className: string }) {
 
   return (
     <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-      {isRepo ? "Source" : "Live site"} <span aria-hidden="true">↗</span>
+      {isRepo ? "Source" : "Live site"} <span aria-hidden="true">↗️</span>
       <span className="sr-only"> (opens in a new tab)</span>
     </a>
   );
