@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { PortableText } from "@portabletext/react";
 import { Project } from "@/types/Project";
@@ -58,14 +59,7 @@ function ProjectItem({ project }: { project: Project }) {
                 {isOpen ? "Details ➖" : "Details ➕"}
               </button>
             )}
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`${buttonClass} group/link inline-flex items-center`}
-            >
-              Link ↗️
-            </a>
+            {project.url && <ProjectLink href={project.url} className={buttonClass} />}
           </div>
 
           {hasContent && (
@@ -85,5 +79,25 @@ function ProjectItem({ project }: { project: Project }) {
         </div>
       </div>
     </div>
+  );
+}
+
+function ProjectLink({ href, className }: { href: string; className: string }) {
+  const internal = href.startsWith("/");
+  const isRepo = /^https?:\/\/(www\.)?github\.com\//.test(href);
+
+  if (internal) {
+    return (
+      <Link href={href} className={className}>
+        Link ↗️
+      </Link>
+    );
+  }
+
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
+      {isRepo ? "Source" : "Live site"} <span aria-hidden="true">↗</span>
+      <span className="sr-only"> (opens in a new tab)</span>
+    </a>
   );
 }
