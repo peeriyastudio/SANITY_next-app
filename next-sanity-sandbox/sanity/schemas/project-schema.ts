@@ -44,6 +44,8 @@ const project = {
       name: "url",
       title: "URL",
       type: "url",
+      validation: (Rule: any) =>
+        Rule.uri({ scheme: ["http", "https"], allowRelative: true }),
     },
     {
       name: "content",

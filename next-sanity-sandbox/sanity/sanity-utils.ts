@@ -32,3 +32,12 @@ export async function getHero(): Promise<Hero | null> {
     }`
   );
 }
+
+export async function getLandingPage() {
+  return client.fetch(
+    groq`*[_type == "landingPage"] | order(_updatedAt desc)[0]{
+      title,
+      sections[]{ ..., "image": image.asset->url }
+    }`
+  );
+}
