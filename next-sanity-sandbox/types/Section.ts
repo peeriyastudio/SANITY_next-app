@@ -1,3 +1,4 @@
+import { landingPage, heroSection, testimonialSection, ctaSection } from "@/sanity/schemas/landing-schema";
 export type HeroSectionData = {
   _type: "heroSection";
   _key: string;
