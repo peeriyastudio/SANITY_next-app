@@ -121,7 +121,7 @@ export default function ContactForm() {
             </svg>
           </span>
           <span className="font-sans text-sm leading-6 text-zinc-700 dark:text-zinc-300">
-            I agree to be contacted about my inquiry. My information won't be shared.
+            I agree to be contacted about my inquiry. My information will not be shared.
           </span>
         </label>
         <FieldError id="consent-error" message={e.consent} />

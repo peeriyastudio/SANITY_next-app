@@ -14,7 +14,7 @@ export default function ContactPage() {
       <header className="mx-auto mb-8 max-w-3xl pl-5 md:mb-12">
         <h1 className="font-heading text-4xl font-bold md:text-5xl">Contact</h1>
         <p className="mt-4 font-sans text-zinc-600 dark:text-zinc-400">
-          Tell me about your project and I'll get back to you within two business days.
+          Tell me about your project and I will get back to you within two business days.
         </p>
       </header>
 
