@@ -1,6 +1,7 @@
 import { Project } from "@/types/Project";
 import { Hero } from "@/types/Hero";
 import { createClient, groq } from "next-sanity";
+import { LandingPage } from "@/types/Section";
 
 const client = createClient({
   projectId: "rpmoy997",
@@ -33,7 +34,7 @@ export async function getHero(): Promise<Hero | null> {
   );
 }
 
-export async function getLandingPage() {
+export async function getLandingPage(): Promise<LandingPage | null> {
   return client.fetch(
     groq`*[_type == "landingPage"] | order(_updatedAt desc)[0]{
       title,

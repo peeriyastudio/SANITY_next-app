@@ -15,7 +15,7 @@ export default function PageInfo() {
           href="/"
           className="inline-flex shrink-0 items-center self-start sm:self-auto font-heading tracking-wider uppercase text-xs font-semibold px-5 py-2.5 border-2 border-black bg-white text-black hover:bg-black hover:text-white dark:border-white dark:bg-zinc-900 dark:text-white dark:hover:bg-white dark:hover:text-black transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 dark:focus-visible:ring-white dark:focus-visible:ring-offset-zinc-900"
         >
-          Go Back
+          Back to Projects
         </Link>
       </div>
     </section>
