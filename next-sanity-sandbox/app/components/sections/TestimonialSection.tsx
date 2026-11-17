@@ -6,7 +6,7 @@ export default function TestimonialSection({
   role,
 }: TestimonialSectionData) {
   return (
-    <section className="mx-auto max-w-3xl px-6 py-10 md:py-14">
+    <section className="font-sans mx-auto max-w-3xl px-6 py-10 md:py-14">
       <figure className="text-center">
         <blockquote className="text-xl font-medium leading-relaxed text-balance md:text-2xl">
           <p>&ldquo;{quote}&rdquo;</p>
